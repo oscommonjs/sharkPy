@@ -4,6 +4,10 @@ Current version: beta 0.1 (frozen)
 
 A python module to dissect, analyze, and interact with network packet data as native Python objects using Wireshark and libpcap capabilities. sharkPy dissect modules extend and otherwise modify Wireshark's tshark. SharkPy packet injection and pcap file writing modules wrap useful libpcap functionality.
 
+SharkPy finds its origin in NSA's Codebreaker Challenge. SharkPy was written (rather quickly) to support the needs of the network analysis portion of the 2016 Challenge. In particular, we needed to generate hundreds of PCAP variations using a template PCAP as source. Was used to vary data elements at link layer, network layer, transport layer, application layer, and other items such as packet timestamps and ordering (among several other things). SharkPy did its job but the fact that it was put together quickly can be seen in its less than ideal code.
+
+That being said...
+
 SharkPy comes with six modules that allows one to explore, create, and/or modify packet data and (re)send data over network, and write (possibly modified) packets to a new pcap output file. This is all done within python program or interactive python session.
 
  1. `sharkPy.file_dissector` -- dissect capture file packets using Wireshark's dissection libraries and present detailed packet dissections to caller as native Python objects.
@@ -27,32 +31,9 @@ just completed: `beta 0.1` - flesh out desired functionality and api
 * fun and useful
 * BUT code was `NOT rigorously tested` i.e. seems to work. However, not for the faint of heart.
 
-current: `beta 0.2` - refactor tshark code to modularize functionality and cross compile for Windows.
-* just started `10/21/16`
-* pen and paper-ing at the moment. Will update wiki as this progresses.
-* should be interesting :)
-
-## Design Goals
-
- 1. Deliver dissected packet data to callers as native python objects.
-
- 2. Provide functionality within a Python environment, either a python program or interactive python session. 
-
- 3. Make commands non-blocking whenever reasonable providing command results to caller on-demand.
-
- 4. Be easy to understand and use assuming one understands Wireshark and python basics.
-
- 5. Pack functionality into a small number of commands.
-
- 6. Build and install as little C-code as possible by linking to preexisting Wireshark shared libs.
-
-
-## Why sharkPy?
-
-SharkPy has a long-term goal of segmenting Wireshark's incredible diversity of capabilities into a set of shared libraries that are smaller, more modular, more easily compiled and linked into other projects. This goal seperates sharkPy from other similar efforts that endeavor to marry Wireshark/tshark and Python. 
-
-The first step is provide Wireshark/tshark capabilities as Python modules that can be compiled/linked outside of Wireshark's normal build process. This has been achieved at least for some linux environments/distros. Next step is to expand to a broader range of linux distros and Windows improving stability along the way. Once this is completed and sharkPy's capabilities are similar to those provided by tshark, the sharkPy project devs will start the process of segmenting the code base as described above.
-
+current: `beta 0.2` - 06/01/2017 -rewrite for 2017 Codebreaker Challenge.
+* removing much of the squirrelly Python code. Replacing with (hopefully) less squirrelly C++. 
+* Covers both packet dissection and packet writing functionality.
 
 # HOW-TO
 
