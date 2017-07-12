@@ -32,13 +32,9 @@ SharkPy is provided "as-is" with NO WARRANTIES expressed or implied under GPLv2.
 
 ## Versioning
 
-just completed: `beta 0.1` - flesh out desired functionality and api
-* fun and useful
+just completed: `beta 0.1` - flesh out desired functionality
+* Useful
 * BUT code was `NOT rigorously tested` i.e. seems to work. However, not for the faint of heart.
-
-current: `beta 0.2` - 06/01/2017 -rewrite for 2017 Codebreaker Challenge.
-* removing much of the squirrelly Python code. Replacing with (hopefully) less squirrelly C++. 
-* Covers both packet dissection and packet writing functionality.
 
 # HOW-TO
 
